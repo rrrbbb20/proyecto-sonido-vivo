@@ -6,6 +6,7 @@ const productos = [
         precio: 319990,
         imagen: "assets/img/guitarra-electrica-epiphone-sg.jpg",
         descripcion: "Cuerpo caoba, mástil caoba, 2 humbuckers"
+        
     },
     {
         id: 2,
@@ -13,7 +14,15 @@ const productos = [
         precio: 389990,
         imagen: "assets/img/bateria-pearl-roadshow.webp",
         descripcion: "Batería Acústica 5 piezas Incluye stands, platillos y pedal de bombo."
-    }
+    },
+    {
+        id: 3,
+        nombre: "Micrófono Condensador Audio-Tech AT2020",
+        precio: 199990,
+        imagen: "assets/img/microfono-atech-at2020.jpg",
+        descripcion: "Cardioide, XLR, ideal para grabación en estudio."
+    },
+
 ];
 
 const parametros = new URLSearchParams(window.location.search);

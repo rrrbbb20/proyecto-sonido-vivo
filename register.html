@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <header class="site-header">
@@ -35,71 +36,105 @@
 
         </header>
         <section class="form-section">
-            <h1> Registrate y Forma Parte de SONIDO VIVO</h1> <!-- Decidir donde poner-->
-            <p>Crea tu cuenta para realizar compras y hacer seguimiento a tus envíos.</p>
 
-            <form id="register-form" action="" method="">
 
-                
-                
-                    <fieldset>
-                        <div class="form-group">
-                            <legend>Datos Personales</legend>                            <label for="nombre">Nombre</label>
-                            <label for="nombre">Correo Electronico</label>
-                            <input  id="correo"
-                                    name="correo"
-                                    type="email"
-                                    autocomplete="email"
-                                    required
-                                >
-                        
-                            <label for="nombre">Nombre</label>
-                            <input  id="nombre"
-                                    name="nombre"
-                                    type="text"
-                                    autocomplete="name"
-                                    minlength="1"
-                                    maxlength="15"
-                                    required>
-                        
-                            <label for="nombre">Apellido</label>
-                        
-                            <input type="text">
-                        
-    
-                        
-                            <label for="nombre">Rut</label>
-                            
-                            <input type="text">
-                            
-                            <label for="">celular</label>
-                            <input type="text">
-
-                            <label for="">celular</label>
-                            <input type="text">
-                            <label for="">contraseña</label>
-                            <input type="text">
-                        
-                        </div>
-                    </fieldset>
-                    
-                <input type="text">
-
-                <h2>Dirección y Despacho</h2>
-                <div class="form-group">
-                <!-- region, ciudad -->
-                </div>
-
-                <h2>Seguridad</h2>
-                <div class="form-group">
-                <!-- contraseña y confirmación -->
-                </div>
-
-            </form>
+            <form id="register-form" action="my-account.html" method="post"> 
+                <fieldset> 
+                    <legend>Datos personales</legend> 
+                    <div class="form-group">
+                         <label for="correo">Correo electrónico</label> 
+                         <input id="correo" 
+                            name="correo" 
+                            type="email" 
+                            autocomplete="email" 
+                            required > 
+                            <small id="error-correo"></small>
+                         <label for="nombre">Nombre</label> 
+                         <input id="nombre" name="nombre" type="text" autocomplete="given-name" 
+                            minlength="1" 
+                            maxlength="50" 
+                            required > 
+                            <small id="error-nombre"></small>
+                         <label for="apellido">Apellido</label> 
+                         <input id="apellido" name="apellido" type="text" autocomplete="family-name" 
+                            minlength="1" 
+                            maxlength="50" 
+                            required > 
+                            <small id="error-apellido"></small>
+                         <label for="rut">RUT</label> 
+                         <input id="rut" name="rut" type="text"
+                            autocomplete="off" 
+                            placeholder="12345678-9" 
+                            minlength="9" 
+                            maxlength="10" 
+                            pattern="^\d{7,8}-[\dkK]$" 
+                            title="Ingresa tu RUT sin puntos y con guion (ej: 12345678-9 o 12345678-k)" 
+                            required > 
+                            <small id="error-rut"></small>
+                         <label for="telefono">Celular</label> 
+                         <input id="telefono" 
+                            name="telefono" type="tel" 
+                            autocomplete="tel" 
+                            placeholder="999999999" 
+                            pattern="[0-9]{9}" 
+                            title="Ingresa 9 dígitos" required >
+                            <small id="error-telefono"></small> 
+                         <label for="contrasena">Contraseña</label> 
+                         <input id="contrasena" name="contrasena" type="password" 
+                            minlength="8"
+                            maxlength="12"
+                            autocomplete="new-password" 
+                            required >
+                            <small id="error-contrasena"></small> 
+                        </div> 
+                    </fieldset> 
+                        <label>
+                            <input
+                            type="checkbox"
+                            name="aceptar-terminos-y-condiciones"
+                            required
+                            >
+                            Acepto que he leido <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+                        </label>
+                        <button type="submit">Registrarme</button>
+                </form>
         </section>
 
 
 
     </main>
+        <footer class="site-footer">
+        <div class="site-footer_info">
+            <p>
+                Tienda de instrumentos musicales y equipos de audio. 
+            </p>
+
+            <p>
+                Viña del Mar, Región de Valparaíso, Chile.
+            </p>
+        </div>
+
+        <nav class="site-footer_nav" aria-label="Navegacion secundaria">
+            <ul class="site-footer_menu">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="catalogo.html">Catálogo</a>
+                </li>
+                <li>
+                    <a href="ubicacion.html">Ubicación</a>
+                </li>
+                <li>
+                    <a href="login.html">Iniciar sesión</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p class="site-footer_copyright">
+            &copy; 2026 Sonido Vivo. .
+        </p>
+    </footer>
+    <script src="assets/js/app.js"></script>
 </body>
 </html>
