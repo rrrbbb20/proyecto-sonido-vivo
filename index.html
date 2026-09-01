@@ -33,9 +33,66 @@
     </header>
 
     <main>
-        
+
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero_content">
+                <h1 id="hero-title">
+                    Instrumentos musicales y equipos de audio
+                </h1>
+
+                <p class="hero_description">
+                    Revisa los productos disponibles en nuestra tienda.
+                </p>
+
+                <div class="hero_actions">
+                    <a class="button button_primary" href="catalogo.html">
+                        Ver productos
+                    </a>
+
+                    <a class="button button_secondary" href="ubicacion.html">
+                        Ver ubicación
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories" aria-labelledby="categories-title">
+
+            <h2 id="categories-title">Categorías</h2>
+            <ul class="categories_list">
+                <li>
+                    <a class="category"
+                          href="catalogo.html?categoria=guitarras-acusticas"
+                    >
+                        Guitarras Acústicas
+                    </a>
+                </li>
+                <li>
+                    <a class="category"
+                          href="catalogo.html?categoria=guitarras-electricas"
+                    >
+                        Guitarras Eléctricas
+                    </a>
+                </li>
+                <li>
+                    <a class="category" href="catalogo.html?categoria=baterias">
+                        Baterías
+                    </a>
+                </li>
+                <li>
+                    <a class="category" href="catalogo.html?categoria=amplificadores">
+                        Amplificadores
+                    </a>
+                </li>
+            </ul>
+
+            <a class="categories_link" href="catalogo.html">
+                Ver todas las categorías
+            </a>
+        </section>
+
         <section>
-            <h1>Productos Recomendados</h1>
+            <h2>Productos Recomendados</h2>
             <ul>
                 <li>
                     <article>
@@ -58,7 +115,73 @@
             </ul>
         </section>
 
+        <section class="featured-video" aria-labelledby="featured-video-title">
+            <h2 id="featured-video-title">Video Destacado</h2>
+
+            <p> Conoce más sobre nuestras guitarras eléctricas Fender </p>
+
+            <div class="featured-video_container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube-nocookie.com/embed/U7jcjvtfZr0" 
+                    title="Video sobre guitarras eléctricas Fender" 
+                    load="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </section>
+        
+        <section class="store-info" aria-labelledby="store-info-title">
+            <h2 id="store-info-title">Sobre la Tienda</h2>
+
+            <p>
+                Sonido Vivo es una tienda de instrumentos musicales ubicada en viña del mar.
+            </p>
+
+            <p>
+                Contamos con instrumentos, equipos de audio, accesorios y servicio de reparación de instrumentos en cuerda.
+            </p>
+
+            <a class="button button_secondary" href="ubicacion.html">
+                Ver ubicación
+            </a>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="site-footer_info">
+            <p>
+                Tienda de instrumentos musicales y equipos de audio. 
+            </p>
+
+            <p>
+                Viña del Mar, Región de Valparaíso, Chile.
+            </p>
+        </div>
+
+        <nav class="site-footer_nav" aria-label="Navegacion secundaria">
+            <ul class="site-footer_menu">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="catalogo.html">Catálogo</a>
+                </li>
+                <li>
+                    <a href="ubicacion.html">Ubicación</a>
+                </li>
+                <li>
+                    <a href="login.html">Iniciar sesión</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p class="site-footer_copyright">
+            &copy; 2026 Sonido Vivo. .
+        </p>
+    </footer>
     <script src="assets/js/app.js"></script>
 </body>
 </html>

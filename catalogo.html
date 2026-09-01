@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Catálogo de productos disponibles en Sonido Vivo."
+    >
+    <title>Catálogo | Sonido Vivo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a
+            class="site-header_logo"
+            href="index.html"
+        >
+            Sonido Vivo
+        </a>
+
+        <nav
+            class="site-header_nav"
+            aria-label="Navegación principal"
+        >
+            <ul class="site-header_menu">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a
+                        href="catalogo.html"
+                        aria-current="page"
+                    >
+                        Catálogo
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ubicacion.html">Ubicación</a>
+                </li>
+
+                <li>
+                    <a href="carrito.html">Carrito (0)</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section
+            class="catalog"
+            aria-labelledby="catalog-title"
+        >
+            <h1 id="catalog-title">
+                Catálogo de productos
+            </h1>
+
+            <p>
+                Revisa los productos disponibles en nuestra tienda.
+            </p>
+
+            <form
+                class="catalog_search"
+                action="catalogo.html"
+                method="get"
+                role="search"
+            >
+                <div class="catalog_search_controls">
+                    <label for="product-search">
+                        Buscar productos
+                    </label>
+
+                    <input
+                        type="search"
+                        name="busqueda"
+                        id="product-search"
+                        placeholder="Buscar..."
+                    >
+                </div>
+
+                <div
+                    class="catalog_search_filters"
+                    id="categorias"
+                >
+                    <label for="category-filter">
+                        Categoría
+                    </label>
+
+                    <select
+                        id="category-filter"
+                        name="categoria"
+                    >
+                        <option value="">
+                            Todas las categorías
+                        </option>
+
+                        <option value="guitarras-acusticas">
+                            Guitarras Acústicas
+                        </option>
+
+                        <option value="guitarras-electricas">
+                            Guitarras Eléctricas
+                        </option>
+
+                        <option value="bajos-electricos">
+                            Bajos Eléctricos
+                        </option>
+
+                        <option value="baterias">
+                            Baterías
+                        </option>
+
+                        <option value="teclados-pianos">
+                            Teclados y Pianos
+                        </option>
+
+                        <option value="amplificadores">
+                            Amplificadores
+                        </option>
+
+                        <option value="microfonos">
+                            Micrófonos
+                        </option>
+
+                        <option value="pedales-efectos">
+                            Pedales de Efectos
+                        </option>
+
+                        <option value="accesorios">
+                            Accesorios
+                        </option>
+
+                        <option value="estudio-grabacion">
+                            Estudio y Grabación
+                        </option>
+                    </select>
+                </div>
+
+                <button type="submit">
+                    Filtrar
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer_info">
+            <p class="site-footer_name">
+                Sonido Vivo
+            </p>
+
+            <p>
+                Tienda de instrumentos musicales y equipos de audio.
+            </p>
+
+            <p>
+                Viña del Mar, Región de Valparaíso, Chile.
+            </p>
+        </div>
+
+        <nav
+            class="site-footer_nav"
+            aria-label="Navegación secundaria"
+        >
+            <ul class="site-footer_menu">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a
+                        href="catalogo.html"
+                        aria-current="page"
+                    >
+                        Catálogo
+                    </a>
+                </li>
+
+                <li>
+                    <a href="ubicacion.html">Ubicación</a>
+                </li>
+
+                <li>
+                    <a href="login.html">Iniciar sesión</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p class="site-footer_copyright">
+            &copy; 2026 Sonido Vivo.
+        </p>
+    </footer>
+</body>
+</html>
