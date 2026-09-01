@@ -18,8 +18,8 @@ const productos = [
     {
         id: 3,
         nombre: "Micrófono Condensador Audio-Tech AT2020",
-        precio: 389990,
-        imagen: "assets/img/assets/img/microfono-atech-at2020.jpg",
+        precio: 199990,
+        imagen: "assets/img/microfono-atech-at2020.jpg",
         descripcion: "Cardioide, XLR, ideal para grabación en estudio."
     },
 
