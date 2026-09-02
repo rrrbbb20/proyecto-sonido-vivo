@@ -1,8 +1,14 @@
+// ==================================================
+// FORMULARIO DE REGISTRO (registro.js)
+// ==================================================
+
 const formularioRegistro = document.querySelector("#register-form");
 
 if (formularioRegistro) {
 
-    // 1. Obtener elementos del DOM
+    // ----------------------------------------------
+    // 1. OBTENER ELEMENTOS DEL DOM (Inputs)
+    // ----------------------------------------------
     const nombre = document.querySelector("#nombre");
     const apellido = document.querySelector("#apellido");
     const correo = document.querySelector("#correo");
@@ -11,7 +17,9 @@ if (formularioRegistro) {
     const contrasena = document.querySelector("#contrasena");
     const terminos = document.querySelector("#terminos");
 
-    // 2. Obtener contenedores de error
+    // ----------------------------------------------
+    // 2. OBTENER CONTENEDORES DE ERROR
+    // ----------------------------------------------
     const errorNombre = document.querySelector("#error-nombre");
     const errorApellido = document.querySelector("#error-apellido");
     const errorCorreo = document.querySelector("#error-correo");
@@ -20,7 +28,9 @@ if (formularioRegistro) {
     const errorContrasena = document.querySelector("#error-contrasena");
     const errorTerminos = document.querySelector("#error-terminos");
 
-    // 3. Función para limpiar mensajes
+    // ----------------------------------------------
+    // 3. FUNCIÓN PARA LIMPIAR ERRORES
+    // ----------------------------------------------
     function limpiarErrores() {
         errorNombre.textContent = "";
         errorApellido.textContent = "";
@@ -31,7 +41,9 @@ if (formularioRegistro) {
         errorTerminos.textContent = "";
     }
 
-    
+    // ----------------------------------------------
+    // 4. ALGORITMO MÓDULO 11 (RUT CHILENO)
+    // ----------------------------------------------
     function validarRut(rutIngresado) {
         const formatoRut = /^\d{7,8}-[\dkK]$/;
         if (!formatoRut.test(rutIngresado)) return false;
@@ -59,7 +71,9 @@ if (formularioRegistro) {
         return digitoCalculado === digitoIngresado;
     }
 
-    
+    // ----------------------------------------------
+    // 5. PROCESAMIENTO Y VALIDACIÓN EN SUBMIT
+    // ----------------------------------------------
     formularioRegistro.addEventListener("submit", function (evento) {
         evento.preventDefault();
         limpiarErrores();
@@ -77,7 +91,7 @@ if (formularioRegistro) {
             formularioValido = false;
         }
 
-        
+        // Validar Nombre
         const valorNombre = nombre.value.trim();
         if (valorNombre === "") {
             errorNombre.textContent = "Debes ingresar tu nombre.";
@@ -87,7 +101,7 @@ if (formularioRegistro) {
             formularioValido = false;
         }
 
-        
+        // Validar Apellido
         const valorApellido = apellido.value.trim();
         if (valorApellido === "") {
             errorApellido.textContent = "Debes ingresar tu apellido.";
@@ -97,7 +111,7 @@ if (formularioRegistro) {
             formularioValido = false;
         }
 
-        
+        // Validar RUT
         const valorRut = rut.value.trim();
         if (valorRut === "") {
             errorRut.textContent = "Debes ingresar tu RUT.";
@@ -107,7 +121,7 @@ if (formularioRegistro) {
             formularioValido = false;
         }
 
-        
+        // Validar Celular (9 dígitos)
         const valorTelefono = telefono.value.trim();
         if (valorTelefono === "") {
             errorTelefono.textContent = "Debes ingresar tu número de celular.";
@@ -117,7 +131,7 @@ if (formularioRegistro) {
             formularioValido = false;
         }
 
-        
+        // Validar Contraseña (8 a 12 caracteres, mayúscula, minúscula y número)
         const valorContrasena = contrasena.value;
         if (valorContrasena === "") {
             errorContrasena.textContent = "Debes ingresar una contraseña.";
@@ -136,63 +150,62 @@ if (formularioRegistro) {
             formularioValido = false;
         }
 
-        // Validar Términos
+        // Validar Términos y Condiciones
         if (!terminos.checked) {
             errorTerminos.textContent = "Debes aceptar los términos y condiciones.";
             formularioValido = false;
         }
-    });
-}
 
+        // ==========================================
+        // 6. COMPROBAR DUPLICADOS Y GUARDAR USUARIO
+        // ==========================================
+        if (formularioValido) {
+            const usuariosGuardados = JSON.parse(
+                localStorage.getItem("usuariosSonidoVivo")
+            ) || [];
 
-// COMPROBAR DUPLICADOS Y GUARDAR USUARIO
-        
-if (formularioValido) {
+            // Comprobar duplicados
+            const correoExiste = usuariosGuardados.some(
+                usuario => usuario.correo === valorCorreo
+            );
 
-    const usuariosGuardados = JSON.parse(
-        localStorage.getItem("usuariosSonidoVivo")
-    ) || [];
+            const rutExiste = usuariosGuardados.some(
+                usuario => usuario.rut === valorRut
+            );
 
-    // Comprobar si el correo ya existe
-    const correoExiste = usuariosGuardados.some(
-        usuario => usuario.correo === valorCorreo
-    );
+            if (correoExiste) {
+                errorCorreo.textContent = "Ya existe una cuenta registrada con este correo.";
+                formularioValido = false;
+            }
 
-    // Comprobar si el RUT ya existe
-    const rutExiste = usuariosGuardados.some(
-        usuario => usuario.rut === valorRut
-    );
+            if (rutExiste) {
+                errorRut.textContent = "Ya existe una cuenta registrada con este RUT.";
+                formularioValido = false;
+            }
 
-    if (correoExiste) {
-        errorCorreo.textContent = "Ya existe una cuenta registrada con este correo.";
-        formularioValido = false;
-    }
+            // Guardar si no hubo duplicados
+            if (formularioValido) {
+                const usuario = {
+                    nombre: valorNombre,
+                    apellido: valorApellido,
+                    correo: valorCorreo,
+                    rut: valorRut,
+                    telefono: valorTelefono,
+                    contrasena: valorContrasena
+                };
 
-    if (rutExiste) {
-        errorRut.textContent = "Ya existe una cuenta registrada con este RUT.";
-        formularioValido = false;
-    }
+                usuariosGuardados.push(usuario);
 
-    // Guardar solamente si no existen duplicados
-    if (formularioValido) {
-        const usuario = {
-            nombre: valorNombre,
-            apellido: valorApellido,
-            correo: valorCorreo,
-            rut: valorRut,
-            telefono: valorTelefono,
-            contrasena: valorContrasena
-        };
+                localStorage.setItem(
+                    "usuariosSonidoVivo",
+                    JSON.stringify(usuariosGuardados)
+                );
 
-        usuariosGuardados.push(usuario);
+                alert("Registro completado con éxito. Ahora puedes iniciar sesión.");
+                formularioRegistro.reset();
 
-        localStorage.setItem(
-            "usuariosSonidoVivo",
-            JSON.stringify(usuariosGuardados)
-        );
-
-        alert("Registro completado con éxito. Ahora puedes iniciar sesión.");
-        formularioRegistro.reset();
-        window.location.href = "login.html";
-    }
-}
+                window.location.href = "login.html";
+            }
+        }
+    }); // Cierre de addEventListener
+} // Cierre de if formularioRegistro
