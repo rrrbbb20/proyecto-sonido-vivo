@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Revisa los productos agregados al carrito de Sonido Vivo."
+    >
+    <title>Carrito de compras | Sonido Vivo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a
+            class="site-header_logo"
+            href="index.html"
+        >
+            Sonido Vivo
+        </a>
+
+        <nav
+            class="site-header_nav"
+            aria-label="Navegación principal"
+        >
+            <ul class="site-header_menu">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="catalogo.html">Catálogo</a>
+                </li>
+
+                <li>
+                    <a href="ubicacion.html">Ubicación</a>
+                </li>
+
+                <li>
+                    <a
+                        href="carrito.html"
+                        aria-current="page"
+                    >
+                        Carrito (0)
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section
+            class="cart"
+            aria-labelledby="cart-title"
+        >
+            <h1 id="cart-title">
+                Carrito de compras
+            </h1>
+
+            <p>
+                Revisa los productos antes de continuar con tu pedido.
+            </p>
+
+            <div
+                class="cart_content"
+                id="cart-content"
+            >
+                <p
+                    class="cart_empty"
+                    id="cart-empty"
+                >
+                    Tu carrito está vacío.
+                </p>
+
+                <ul class="cart_list" id="cart-list" hidden></ul>
+
+                <p class="cart_summary" id="cart-summary" hidden></p>
+
+                <a
+                    class="button button_primary"
+                    href="catalogo.html"
+                >
+                    Ver productos
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer_info">
+            <p class="site-footer_name">
+                Sonido Vivo
+            </p>
+
+            <p>
+                Tienda de instrumentos musicales y equipos de audio.
+            </p>
+
+            <p>
+                Viña del Mar, Región de Valparaíso, Chile.
+            </p>
+        </div>
+
+        <nav
+            class="site-footer_nav"
+            aria-label="Navegación secundaria"
+        >
+            <ul class="site-footer_menu">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="catalogo.html">Catálogo</a>
+                </li>
+
+                <li>
+                    <a href="ubicacion.html">Ubicación</a>
+                </li>
+
+                <li>
+                    <a href="login.html">Iniciar sesión</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p class="site-footer_copyright">
+            &copy; 2026 Sonido Vivo.
+        </p>
+    </footer>
+
+    <script src="assets/js/carrito.js"></script>
+</body>
+</html>
