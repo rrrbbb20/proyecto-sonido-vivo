@@ -7,17 +7,25 @@ const productos = [
         imagen: "assets/img/guitarra-electrica-epiphone-sg.jpg",
         descripcion: "Cuerpo caoba, mástil caoba, 2 humbuckers",
         stock: 3,
+<<<<<<< HEAD
         categoria: "Guitarras",
+=======
+        categoria: "guitarras-electricas",
+>>>>>>> main
         video_demostrativo:""
     },
     {
         id: 2,
         nombre: "Batería Acústica Pearl",
-        precio: 389990,
+        precio: 599990,
         imagen: "assets/img/bateria-pearl-roadshow.webp",
         descripcion: "Batería Acústica 5 piezas Incluye stands, platillos y pedal de bombo.",
         stock : 2,
+<<<<<<< HEAD
         categoria: "Baterias",
+=======
+        categoria: "baterias",
+>>>>>>> main
         video_demostrativo:""
     },
     {
@@ -27,7 +35,11 @@ const productos = [
         imagen: "assets/img/microfono-atech-at2020.jpg",
         descripcion: "Cardioide, XLR, ideal para grabación en estudio.",
         stock : 4,
+<<<<<<< HEAD
         categoria: "Microfonos",
+=======
+        categoria: "microfonos",
+>>>>>>> main
         video_demostrativo:""
     },
 

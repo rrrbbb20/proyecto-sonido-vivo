@@ -2,29 +2,54 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
-        name="description" 
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
         content="Sonido Vivo es una tienda especializada en instrumentos musicales y equipos de audio."
     >
     <title>Sonido Vivo | Instrumentos y audio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
     <header class="site-header">
-        <a class="site-header_logo" href="index.html">Sonido Vivo</a>
+        <a
+            class="site-header_logo"
+            href="index.html"
+            aria-current="page"
+        >
+            Sonido Vivo
+        </a>
 
-        <nav class="site-header_nav" aria-label="Navegacion principal">
+        <nav
+            class="site-header_nav"
+            aria-label="Navegación principal"
+        >
             <ul class="site-header_menu">
                 <li>
-                    <a href="index.html">Inicio</a>
+                    <a
+                        href="index.html"
+                        aria-current="page"
+                    >
+                        Inicio
+                    </a>
                 </li>
+
                 <li>
                     <a href="catalogo.html">Catálogo</a>
                 </li>
+
                 <li>
                     <a href="ubicacion.html">Ubicación</a>
                 </li>
+                
+                <li>
+                    <a href="login.html">Iniciar Sesión</a>
+                </li>
+
                 <li>
                     <a href="carrito.html">Carrito (0)</a>
                 </li>
@@ -33,8 +58,10 @@
     </header>
 
     <main>
-
-        <section class="hero" aria-labelledby="hero-title">
+        <section
+            class="hero"
+            aria-labelledby="hero-title"
+        >
             <div class="hero_content">
                 <h1 id="hero-title">
                     Instrumentos musicales y equipos de audio
@@ -45,116 +72,190 @@
                 </p>
 
                 <div class="hero_actions">
-                    <a class="button button_primary" href="catalogo.html">
+                    <a
+                        class="button button_primary"
+                        href="catalogo.html"
+                    >
                         Ver productos
                     </a>
 
-                    <a class="button button_secondary" href="ubicacion.html">
+                    <a
+                        class="button button_secondary"
+                        href="ubicacion.html"
+                    >
                         Ver ubicación
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="categories" aria-labelledby="categories-title">
-
+        <section
+            class="categories"
+            aria-labelledby="categories-title"
+        >
             <h2 id="categories-title">Categorías</h2>
+
             <ul class="categories_list">
                 <li>
-                    <a class="category"
-                          href="catalogo.html?categoria=guitarras-acusticas"
+                    <a
+                        class="category"
+                        href="catalogo.html?categoria=guitarras-acusticas#categorias"
                     >
                         Guitarras Acústicas
                     </a>
                 </li>
+
                 <li>
-                    <a class="category"
-                          href="catalogo.html?categoria=guitarras-electricas"
+                    <a
+                        class="category"
+                        href="catalogo.html?categoria=guitarras-electricas#categorias"
                     >
                         Guitarras Eléctricas
                     </a>
                 </li>
+
                 <li>
-                    <a class="category" href="catalogo.html?categoria=baterias">
+                    <a
+                        class="category"
+                        href="catalogo.html?categoria=baterias#categorias"
+                    >
                         Baterías
                     </a>
                 </li>
+
                 <li>
-                    <a class="category" href="catalogo.html?categoria=amplificadores">
+                    <a
+                        class="category"
+                        href="catalogo.html?categoria=amplificadores#categorias"
+                    >
                         Amplificadores
                     </a>
                 </li>
             </ul>
 
-            <a class="categories_link" href="catalogo.html">
+            <a
+                class="categories_link"
+                href="catalogo.html#categorias"
+            >
                 Ver todas las categorías
             </a>
         </section>
 
-        <section>
-            <h2>Productos Recomendados</h2>
-            <ul>
+        <section
+            class="recommended-products"
+            aria-labelledby="recommended-products-title"
+        >
+            <h2 id="recommended-products-title">
+                Productos recomendados
+            </h2>
+
+            <ul class="recommended-products_list">
                 <li>
                     <article>
                         <a href="producto.html?id=1">
-                            <img src="assets/img/guitarra-electrica-epiphone-sg.jpg" alt="guitarra-electrica-epiphone-sg">
-                            <h3>Guitarra Eléctrica Epiphone</h3>
+                            <img
+                                src="assets/img/guitarra-electrica-epiphone-sg.jpg"
+                                alt="Guitarra eléctrica Epiphone SG Standard"
+                            >
+
+                            <h3>
+                                Guitarra Eléctrica Epiphone
+                            </h3>
+
                             <p>SG Standard</p>
+
                             <span>$319.990</span>
                         </a>
                     </article>
+                </li>
+
+                <li>
                     <article>
                         <a href="producto.html?id=2">
-                            <img src="assets/img/bateria-pearl-roadshow.webp" alt="bateria-pearl-roadshow">
-                            <h3>Bateria Pearl RoadShow</h3>
-                            <p>Pearl RoadShow RS 525</p>
-                            <span>$389.990</span>
+                            <img
+                                src="assets/img/bateria-pearl-roadshow.webp"
+                                alt="Batería acústica Pearl Roadshow"
+                            >
+
+                            <h3>
+                                Batería Acústica Pearl
+                            </h3>
+
+                            <p>Roadshow</p>
+
+                            <span>$599.990</span>
                         </a>
                     </article>
+                </li>
+
+                <li>
                     <article>
                         <a href="producto.html?id=3">
-                            <img src="assets/img/microfono-atech-at2020.jpg" alt="microfono-atech-at2020">
-                            <h3>Micrófono Condensador Audio-Tech</h3>
-                            <p>Micrófono Condensador AT2020 </p>
+                            <img
+                                src="assets/img/microfono-atech-at2020.jpg"
+                                alt="Micrófono condensador Audio-Tech AT2020"
+                            >
+
+                            <h3>
+                                Micrófono Condensador Audio-Tech
+                            </h3>
+
+                            <p>AT2020</p>
+
                             <span>$199.990</span>
-
                         </a>
-
                     </article>
                 </li>
             </ul>
         </section>
 
-        <section class="featured-video" aria-labelledby="featured-video-title">
-            <h2 id="featured-video-title">Video Destacado</h2>
+        <section
+            class="featured-video"
+            aria-labelledby="featured-video-title"
+        >
+            <h2 id="featured-video-title">
+                Video destacado
+            </h2>
 
-            <p> Conoce más sobre nuestras guitarras eléctricas Fender </p>
+            <p>
+                Conoce más sobre las guitarras eléctricas Fender.
+            </p>
 
             <div class="featured-video_container">
-                <iframe 
-                    width="560" 
-                    height="315" 
-                    src="https://www.youtube-nocookie.com/embed/U7jcjvtfZr0" 
-                    title="Video sobre guitarras eléctricas Fender" 
-                    load="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube-nocookie.com/embed/U7jcjvtfZr0"
+                    title="Video sobre guitarras eléctricas Fender"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
                 ></iframe>
             </div>
         </section>
-        
-        <section class="store-info" aria-labelledby="store-info-title">
-            <h2 id="store-info-title">Sobre la Tienda</h2>
+
+        <section
+            class="store-info"
+            aria-labelledby="store-info-title"
+        >
+            <h2 id="store-info-title">
+                Sobre la tienda
+            </h2>
 
             <p>
-                Sonido Vivo es una tienda de instrumentos musicales ubicada en viña del mar.
+                Sonido Vivo es una tienda de instrumentos musicales
+                ubicada en Viña del Mar.
             </p>
 
             <p>
-                Contamos con instrumentos, equipos de audio, accesorios y servicio de reparación de instrumentos en cuerda.
+                Contamos con instrumentos, equipos de audio, accesorios
+                y servicio de reparación de instrumentos de cuerda.
             </p>
 
-            <a class="button button_secondary" href="ubicacion.html">
+            <a
+                class="button button_secondary"
+                href="ubicacion.html"
+            >
                 Ver ubicación
             </a>
         </section>
@@ -162,8 +263,12 @@
 
     <footer class="site-footer">
         <div class="site-footer_info">
+            <p class="site-footer_name">
+                Sonido Vivo
+            </p>
+
             <p>
-                Tienda de instrumentos musicales y equipos de audio. 
+                Tienda de instrumentos musicales y equipos de audio.
             </p>
 
             <p>
@@ -171,27 +276,38 @@
             </p>
         </div>
 
-        <nav class="site-footer_nav" aria-label="Navegacion secundaria">
+        <nav
+            class="site-footer_nav"
+            aria-label="Navegación secundaria"
+        >
             <ul class="site-footer_menu">
                 <li>
-                    <a href="index.html">Inicio</a>
+                    <a
+                        href="index.html"
+                        aria-current="page"
+                    >
+                        Inicio
+                    </a>
                 </li>
+
                 <li>
                     <a href="catalogo.html">Catálogo</a>
                 </li>
+
                 <li>
                     <a href="ubicacion.html">Ubicación</a>
                 </li>
+
                 <li>
                     <a href="login.html">Iniciar sesión</a>
                 </li>
             </ul>
         </nav>
-
         <p class="site-footer_copyright">
-            &copy; 2026 Sonido Vivo. .
+            &copy; 2026 Sonido Vivo.
         </p>
     </footer>
+    
     <script src="assets/js/app.js"></script>
 </body>
 </html>
