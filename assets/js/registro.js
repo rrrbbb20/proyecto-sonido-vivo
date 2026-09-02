@@ -143,3 +143,56 @@ if (formularioRegistro) {
         }
     });
 }
+
+
+// COMPROBAR DUPLICADOS Y GUARDAR USUARIO
+        
+if (formularioValido) {
+
+    const usuariosGuardados = JSON.parse(
+        localStorage.getItem("usuariosSonidoVivo")
+    ) || [];
+
+    // Comprobar si el correo ya existe
+    const correoExiste = usuariosGuardados.some(
+        usuario => usuario.correo === valorCorreo
+    );
+
+    // Comprobar si el RUT ya existe
+    const rutExiste = usuariosGuardados.some(
+        usuario => usuario.rut === valorRut
+    );
+
+    if (correoExiste) {
+        errorCorreo.textContent = "Ya existe una cuenta registrada con este correo.";
+        formularioValido = false;
+    }
+
+    if (rutExiste) {
+        errorRut.textContent = "Ya existe una cuenta registrada con este RUT.";
+        formularioValido = false;
+    }
+
+    // Guardar solamente si no existen duplicados
+    if (formularioValido) {
+        const usuario = {
+            nombre: valorNombre,
+            apellido: valorApellido,
+            correo: valorCorreo,
+            rut: valorRut,
+            telefono: valorTelefono,
+            contrasena: valorContrasena
+        };
+
+        usuariosGuardados.push(usuario);
+
+        localStorage.setItem(
+            "usuariosSonidoVivo",
+            JSON.stringify(usuariosGuardados)
+        );
+
+        alert("Registro completado con éxito. Ahora puedes iniciar sesión.");
+        formularioRegistro.reset();
+        window.location.href = "login.html";
+    }
+}
