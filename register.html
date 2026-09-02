@@ -56,13 +56,13 @@
                             required > 
                             <small id="error-nombre"></small>
                          <label for="apellido">Apellido</label> 
-                         <input id="apellido" name="apellido" type="text" autocomplete="family-name" 
+                         <input id="apellido-registro" name="apellido" type="text" autocomplete="family-name" 
                             minlength="1" 
                             maxlength="50" 
                             required > 
                             <small id="error-apellido"></small>
                          <label for="rut">RUT</label> 
-                         <input id="rut" name="rut" type="text"
+                         <input id="rut-registro" name="rut" type="text"
                             autocomplete="off" 
                             placeholder="12345678-9" 
                             minlength="9" 
@@ -72,7 +72,7 @@
                             required > 
                             <small id="error-rut"></small>
                          <label for="telefono">Celular</label> 
-                         <input id="telefono" 
+                         <input id="telefono-registro" 
                             name="telefono" type="tel" 
                             autocomplete="tel" 
                             placeholder="999999999" 
@@ -80,7 +80,7 @@
                             title="Ingresa 9 dígitos" required >
                             <small id="error-telefono"></small> 
                          <label for="contrasena">Contraseña</label> 
-                         <input id="contrasena" name="contrasena" type="password" 
+                         <input id="contrasena-registro" name="contrasena" type="password" 
                             minlength="8"
                             maxlength="12"
                             autocomplete="new-password" 
@@ -96,6 +96,7 @@
                             >
                             Acepto que he leido <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
                         </label>
+                        <small id="error-terminos"></small>
                         <button type="submit">Registrarme</button>
                 </form>
         </section>
