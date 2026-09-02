@@ -8,6 +8,12 @@ const productosCatalogo =
 const resultadoCatalogo =
     document.querySelector(".product-list_results");
 
+const botonesAgregar =
+    document.querySelectorAll("[data-add-cart]");
+
+const mensajeCarrito =
+    document.querySelector("#catalog-cart-message");
+
 function normalizarTexto(texto) {
     return texto
         .toLowerCase()
@@ -72,3 +78,61 @@ if (
         }
     });
 }
+
+function obtenerCarrito() {
+    const carritoGuardado =
+        localStorage.getItem("carritoSonidoVivo");
+
+    if (carritoGuardado) {
+        return JSON.parse(carritoGuardado);
+    }
+
+    return [];
+}
+
+function guardarCarrito(carrito) {
+    localStorage.setItem(
+        "carritoSonidoVivo",
+        JSON.stringify(carrito)
+    );
+}
+
+botonesAgregar.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        const idProducto = Number(
+            boton.dataset.productId
+        );
+
+        const tarjetaProducto =
+            boton.closest("[data-producto]");
+
+        const nombreProducto = tarjetaProducto
+            .querySelector("h3")
+            .textContent
+            .trim();
+
+        const carrito = obtenerCarrito();
+
+        const productoExistente = carrito.find(
+            function (producto) {
+                return producto.id === idProducto;
+            }
+        );
+
+        if (productoExistente) {
+            productoExistente.cantidad++;
+        } else {
+            carrito.push({
+                id: idProducto,
+                cantidad: 1
+            });
+        }
+
+        guardarCarrito(carrito);
+
+        if (mensajeCarrito) {
+            mensajeCarrito.textContent =
+                `${nombreProducto} fue agregado al carrito.`;
+        }
+    });
+});
