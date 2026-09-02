@@ -79,6 +79,23 @@ if (
     });
 }
 
+const parametrosCatalogo = new URLSearchParams(window.location.search);
+
+const busquedaInicial = parametrosCatalogo.get("busqueda");
+const categoriaInicial = parametrosCatalogo.get("categoria");
+
+if (campoBusqueda && busquedaInicial) {
+    campoBusqueda.value = busquedaInicial;
+}
+
+if (filtroCategoria && categoriaInicial) {
+    filtroCategoria.value = categoriaInicial;
+}
+
+if(formularioCatalogo && (busquedaInicial || categoriaInicial)) {
+    formularioCatalogo.requestSubmit();
+}
+
 function obtenerCarrito() {
     const carritoGuardado =
         localStorage.getItem("carritoSonidoVivo");
