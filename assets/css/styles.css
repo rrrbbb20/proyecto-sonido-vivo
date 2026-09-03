@@ -105,3 +105,44 @@ main {
     }
 }
     */
+
+/* menu hamburguesa -mobile first*/
+
+.menu-toggle {
+    display: block;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 1.8rem;
+    padding: 8px;
+}
+
+.site-header_nav {
+    display: none;
+}
+
+.site-header_nav.is-open {
+    display: block;
+}
+
+.site-header_menu {
+    flex-direction: column;
+}
+
+
+/*VERSION ESCRITORIO*/
+
+@media (min-width: 701px) {
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .site-header_nav {
+        display: block;
+    }
+
+    .site-header_menu {
+        flex-direction: row;
+    }
+}
