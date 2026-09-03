@@ -15,7 +15,7 @@ const rut = document.querySelector("#rut");
 const telefono = document.querySelector("#telefono");
 const contrasena = document.querySelector("#contrasena");
 const terminos = document.querySelector("#terminos");
-
+const direccion = document.querySelector("#direccion");
 
 // 2. OBTENER CONTENEDORES DE ERROR
 
@@ -26,7 +26,7 @@ const errorRut = document.querySelector("#error-rut");
 const errorTelefono = document.querySelector("#error-telefono");
 const errorContrasena = document.querySelector("#error-contrasena");
 const errorTerminos = document.querySelector("#error-terminos");
-
+const errorDireccion = document.querySelector("#error-direccion");
 
 // 3. FUNCIÓN PARA LIMPIAR ERRORES
 
@@ -38,6 +38,7 @@ function limpiarErrores() {
     errorTelefono.textContent = "";
     errorContrasena.textContent = "";
     errorTerminos.textContent = "";
+    errorDireccion.textContent = "";
 }
 
 
@@ -106,6 +107,19 @@ formularioRegistro.addEventListener("submit", function (evento) {
         errorTelefono.textContent = "El celular debe contener exactamente 9 dígitos.";
         formularioValido = false;
     }
+    const valorDireccion = direccion.value.trim();
+
+    //validar direccion
+    if (valorDireccion === "") {
+        errorDireccion.textContent =
+            "Debes ingresar tu dirección.";
+        formularioValido = false;
+
+    } else if (valorDireccion.length < 5) {
+        errorDireccion.textContent =
+            "La dirección debe tener al menos 5 caracteres.";
+        formularioValido = false;
+    }
 
     // Validar Contraseña (8 a 12 caracteres)
     const valorContrasena = contrasena.value;
@@ -158,6 +172,7 @@ formularioRegistro.addEventListener("submit", function (evento) {
                 correo: valorCorreo,
                 rut: valorRut,
                 telefono: valorTelefono,
+                direccion: valorDireccion,
                 contrasena: valorContrasena
             };
 
