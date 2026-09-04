@@ -147,6 +147,8 @@ botonesAgregar.forEach(function (boton) {
 
         guardarCarrito(carrito);
 
+        actualizarContadorCarrito();
+
         if (mensajeCarrito) {
             mensajeCarrito.textContent =
                 `${nombreProducto} fue agregado al carrito.`;
