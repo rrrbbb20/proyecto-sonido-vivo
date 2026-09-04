@@ -81,3 +81,31 @@ if (nombreProducto) {
         }
     }
 }
+
+// menu hamburguesa
+
+const botonMenu = document.querySelector(".menu-toggle");
+const menuNavegacion = document.querySelector("#main-navigation");
+
+if (botonMenu && menuNavegacion) {
+
+    botonMenu.addEventListener("click", function () {
+
+        const menuAbierto =
+            botonMenu.getAttribute("aria-expanded") === "true";
+
+        botonMenu.setAttribute(
+            "aria-expanded",
+            String(!menuAbierto)
+        );
+
+        menuNavegacion.classList.toggle("is-open");
+
+        botonMenu.setAttribute(
+            "aria-label",
+            menuAbierto
+                ? "Abrir menú de navegación"
+                : "Cerrar menú de navegación"
+        );
+    });
+}

@@ -8,19 +8,38 @@
 </head>
 <body>
     <header class="site-header">
-        <a class="site-header_logo" href="index.html">Sonido Vivo</a>
+        <a class="site-header_logo" href="index.html">
+            Sonido Vivo
+        </a>
 
-        <nav class="site-header_nav" aria-label="Navegacion principal">
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú de navegación"
+            aria-controls="main-navigation"
+            aria-expanded="false"
+        >
+            <span aria-hidden="true">☰</span>
+        </button>
+
+        <nav
+            id="main-navigation"
+            class="site-header_nav"
+            aria-label="Navegación principal"
+        >
             <ul class="site-header_menu">
                 <li>
                     <a href="index.html">Inicio</a>
                 </li>
+
                 <li>
                     <a href="catalogo.html">Catálogo</a>
                 </li>
+
                 <li>
                     <a href="ubicacion.html">Ubicación</a>
                 </li>
+
                 <li>
                     <a href="carrito.html">Carrito (0)</a>
                 </li>
@@ -28,7 +47,7 @@
         </nav>
     </header>
 
-    <main id="contenido-principal">
+    <main id="pagina-registro">
 
         <header class="encabezado-pagina">
             <h1> Registrate y Forma Parte de SONIDO VIVO</h1>
@@ -36,68 +55,126 @@
 
         </header>
         <section class="form-section">
+            <form id="register-form" action="my-account.html" method="post" novalidate>
+                <fieldset>
+                    <legend>Datos personales</legend>
 
-
-            <form id="register-form" action="my-account.html" method="post"> 
-                <fieldset> 
-                    <legend>Datos personales</legend> 
                     <div class="form-group">
-                         <label for="correo">Correo electrónico</label> 
-                         <input id="correo" 
+                        <label for="correo">Correo electrónico</label>
+                        <input 
+                            id="correo" 
                             name="correo" 
                             type="email" 
                             autocomplete="email" 
-                            required > 
-                            <small id="error-correo"></small>
-                         <label for="nombre">Nombre</label> 
-                         <input id="nombre" name="nombre" type="text" autocomplete="given-name" 
-                            minlength="1" 
+                            placeholder="ejemplo@correo.cl"
+                            required
+                        >
+                        <small class="error-msg" id="error-correo"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input 
+                            id="nombre" 
+                            name="nombre" 
+                            type="text" 
+                            autocomplete="given-name" 
+                            minlength="3" 
                             maxlength="50" 
-                            required > 
-                            <small id="error-nombre"></small>
-                         <label for="apellido">Apellido</label> 
-                         <input id="apellido" name="apellido" type="text" autocomplete="family-name" 
-                            minlength="1" 
+                            placeholder="Tu primer nombre"
+                            required
+                        >
+                        <small class="error-msg" id="error-nombre"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input 
+                            id="apellido" 
+                            name="apellido" 
+                            type="text" 
+                            autocomplete="family-name" 
+                            minlength="3" 
                             maxlength="50" 
-                            required > 
-                            <small id="error-apellido"></small>
-                         <label for="rut">RUT</label> 
-                         <input id="rut" name="rut" type="text"
+                            placeholder="Tus apellidos"
+                            required
+                        >
+                        <small class="error-msg" id="error-apellido"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rut">RUT</label>
+                        <input 
+                            id="rut" 
+                            name="rut" 
+                            type="text"
                             autocomplete="off" 
                             placeholder="12345678-9" 
                             minlength="9" 
                             maxlength="10" 
-                            pattern="^\d{7,8}-[\dkK]$" 
-                            title="Ingresa tu RUT sin puntos y con guion (ej: 12345678-9 o 12345678-k)" 
-                            required > 
-                            <small id="error-rut"></small>
-                         <label for="telefono">Celular</label> 
-                         <input id="telefono" 
-                            name="telefono" type="tel" 
+                            required
+                        >
+                        <small class="error-msg" id="error-rut"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Celular</label>
+                        <input 
+                            id="telefono" 
+                            name="telefono" 
+                            type="tel" 
                             autocomplete="tel" 
-                            placeholder="999999999" 
-                            pattern="[0-9]{9}" 
-                            title="Ingresa 9 dígitos" required >
-                            <small id="error-telefono"></small> 
-                         <label for="contrasena">Contraseña</label> 
-                         <input id="contrasena" name="contrasena" type="password" 
+                            placeholder="912345678" 
+                            maxlength="9" 
+                            required
+                        >
+                        <small class="error-msg" id="error-telefono"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección</label>
+                        <input
+                            id="direccion"
+                            name="direccion"
+                            type="text"
+                            autocomplete="street-address"
+                            minlength="5"
+                            maxlength="100"
+                            placeholder="Ej: La Moneda 1314"
+                            required
+                        >
+                        <small class="error-msg" id="error-direccion"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input 
+                            id="contrasena" 
+                            name="contrasena" 
+                            type="password" 
                             minlength="8"
                             maxlength="12"
                             autocomplete="new-password" 
-                            required >
-                            <small id="error-contrasena"></small> 
-                        </div> 
-                    </fieldset> 
-                        <label>
-                            <input
+                            placeholder="Entre 8 y 12 caracteres, 1 mayúscula y 1 número"
+                            required
+                        >
+                        <small class="error-msg" id="error-contrasena"></small>
+                    </div>
+                </fieldset>
+
+                <div class="form-group-checkbox">
+                    <label for="terminos">
+                        <input
+                            id="terminos"
                             type="checkbox"
                             name="aceptar-terminos-y-condiciones"
                             required
-                            >
-                            Acepto que he leido <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
-                        </label>
-                        <button type="submit">Registrarme</button>
-                </form>
+                        >
+                        Acepto que he leído los <a href="terminos-y-condiciones.html" target="_blank">Términos y Condiciones</a>
+                    </label>
+                    <small class="error-msg" id="error-terminos"></small>
+                </div>
+
+                <button type="submit" class="btn-submit">Registrarme</button>
+            </form>
         </section>
 
 
@@ -136,5 +213,6 @@
         </p>
     </footer>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/registro.js"></script>
 </body>
 </html>
