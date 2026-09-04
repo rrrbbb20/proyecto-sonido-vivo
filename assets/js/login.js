@@ -13,6 +13,9 @@ const errorCorreo =
 const errorContrasena =
     document.querySelector("#login-password-error");
 
+const mensajeLogin =
+    document.querySelector("#login-success");
+
 function mostrarError(campo, contenedorError, mensaje) {
     contenedorError.textContent = mensaje;
     campo.setAttribute("aria-invalid", "true");
@@ -28,7 +31,8 @@ if (
     campoCorreo &&
     campoContrasena &&
     errorCorreo &&
-    errorContrasena
+    errorContrasena &&
+    mensajeLogin
 ) {
     formularioLogin.addEventListener("submit", function (evento) {
         evento.preventDefault();
@@ -82,6 +86,10 @@ if (
         }
 
         if (!formularioValido) {
+
+            mensajeLogin.hidden = true;
+            mensajeLogin.textContent = "";
+
             const primerCampoInvalido =
                 formularioLogin.querySelector(
                     '[aria-invalid="true"]'
@@ -90,6 +98,13 @@ if (
             if (primerCampoInvalido) {
                 primerCampoInvalido.focus();
             }
+
+            return;
         }
+
+        mensajeLogin.textContent =
+            "Formulario enviado correctamente. ¡Bienvenido!";
+        mensajeLogin.hidden = false;
     });
 }
+
