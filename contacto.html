@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ponte en contacto con el equipo de Sonido Vivo.">
+    <title>Contacto | Sonido Vivo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    
+    <header class="site-header">
+    <a 
+        class="site-header_logo"
+        href="index.html"
+    >
+        Sonido Vivo
+    </a>
+
+    <nav
+        class="site-header_nav"
+        aria-label="Navegación principal"
+    >
+        <ul class="site-header_menu">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
+
+            <li>
+                <a href="catalogo.html">Catálogo</a>
+            </li>
+
+            <li>
+                <a href="ubicacion.html">Ubicación</a>
+            </li>
+
+            <li>
+                <a href="contacto.html">Contacto</a>
+            </li>
+
+            <li>
+                <a href="login.html">Iniciar Sesión</a>
+            </li>
+
+            <li>
+                <a 
+                    href="carrito.html"
+                >
+                    Carrito (0)
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="contenedor-principal">
+        <h1>Contacto</h1>
+        <p>¿Tienes dudas sobre algún instrumento o necesitas servicio de reparación? Escríbenos y te responderemos a la brevedad.</p>
+
+        <section class="formulario-contacto">
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Envíanos un mensaje</legend>
+                    
+                    <div class="campo-formulario">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="asunto">Asunto:</label>
+                        <select id="asunto" name="asunto">
+                            <option value="consulta">Consulta de producto</option>
+                            <option value="reparacion">Servicio de reparación</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu consulta aquí..."></textarea>
+                    </div>
+
+                    <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    
+    <footer class="site-footer">
+        <p>Sonido Vivo</p>
+        <p>Tienda de instrumentos musicales y equipos de audio.</p>
+        <p>Viña del Mar, Región de Valparaíso, Chile.</p>
+        <p>&copy; 2026 Sonido Vivo.</p>
+    </footer>
+</body>
+</html>
