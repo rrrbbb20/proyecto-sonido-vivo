@@ -33,12 +33,12 @@ const productos = [
 
 ];
 
-//para mostrar productos recomendados en producto
-//va a buscar solo en donde esta el id nombre producto.html asi no entra a los otros .html
-const nombreProducto = document.querySelector("#nombre");
 
-if (nombreProducto) {
+const paginaProducto = document.querySelector("#pagina-producto");
+
+if (paginaProducto) {
     //recien ahi va a obtener la url que esta despues del ?
+    const nombreProducto = document.querySelector("#nombre");
     const parametros = new URLSearchParams(window.location.search);
     const id = Number(parametros.get("id"));
     // va a hacer la comparacion de que p que va a ser cada producto durante la iteracion 

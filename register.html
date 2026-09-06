@@ -8,44 +8,48 @@
 </head>
 <body>
     <header class="site-header">
-        <a class="site-header_logo" href="index.html">
-            Sonido Vivo
-        </a>
+    <a 
+        class="site-header_logo"
+        href="index.html"
+    >
+        Sonido Vivo
+    </a>
 
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Abrir menú de navegación"
-            aria-controls="main-navigation"
-            aria-expanded="false"
-        >
-            <span aria-hidden="true">☰</span>
-        </button>
+    <nav
+        class="site-header_nav"
+        aria-label="Navegación principal"
+    >
+        <ul class="site-header_menu">
+            <li>
+                <a href="index.html">Inicio</a>
+            </li>
 
-        <nav
-            id="main-navigation"
-            class="site-header_nav"
-            aria-label="Navegación principal"
-        >
-            <ul class="site-header_menu">
-                <li>
-                    <a href="index.html">Inicio</a>
-                </li>
+            <li>
+                <a href="catalogo.html">Catálogo</a>
+            </li>
 
-                <li>
-                    <a href="catalogo.html">Catálogo</a>
-                </li>
+            <li>
+                <a href="ubicacion.html">Ubicación</a>
+            </li>
 
-                <li>
-                    <a href="ubicacion.html">Ubicación</a>
-                </li>
+            <li>
+                <a href="contacto.html">Contacto</a>
+            </li>
 
-                <li>
-                    <a href="carrito.html">Carrito (0)</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+            <li>
+                <a href="login.html">Iniciar Sesión</a>
+            </li>
+
+            <li>
+                <a 
+                    href="carrito.html"
+                >
+                    Carrito (0)
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
     <main id="pagina-registro">
 
@@ -153,7 +157,7 @@
                             minlength="8"
                             maxlength="12"
                             autocomplete="new-password" 
-                            placeholder="Entre 8 y 12 caracteres, 1 mayúscula y 1 número"
+                            placeholder="Entre 8 y 12 caracteres"
                             required
                         >
                         <small class="error-msg" id="error-contrasena"></small>
@@ -212,6 +216,7 @@
             &copy; 2026 Sonido Vivo. .
         </p>
     </footer>
+    <script src="assets/js/navegacion.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/registro.js"></script>
 </body>
