@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirma tu pedido en Sonido Vivo.">
+    <title>Confirmar Pedido | Sonido Vivo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    
+    <header class="site-header">
+        <a class="site-header_logo" href="index.html">Sonido Vivo</a>
+        <nav class="site-header_nav" aria-label="Navegación principal">
+            <ul class="site-header_menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="carrito.html">Carrito (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <h1>Confirmar Pedido</h1>
+        
+        <!-- JavaScript insertará los productos dinámicamente -->
+        <section id="resumen-pedido">
+            <h2>Resumen de tu compra</h2>
+            <div id="lista-productos"></div>
+            <h3 id="total-pedido">Total: $0</h3>
+        </section>
+
+        //formulario de confirmación de pedido
+        <section class="formulario-contacto" style="margin-top: 2rem;">
+            <h2>Datos de Envío</h2>
+            <form id="form-confirmacion" action="#" method="POST">
+                <fieldset>
+                    <div class="campo-formulario">
+                        <label for="direccion">Dirección de entrega:</label>
+                        <input type="text" id="direccion" name="direccion" required placeholder="Ej: 1 Norte 123, Depto 402">
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="comuna">Comuna:</label>
+                        <input type="text" id="comuna" name="comuna" required placeholder="Ej: Viña del Mar">
+                    </div>
+                    <button type="button" id="boton-confirmar" class="boton-enviar">Confirmar Compra</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    
+    <footer class="site-footer">
+        <p>Sonido Vivo</p>
+        <p>Tienda de instrumentos musicales y equipos de audio.</p>
+        <p>Viña del Mar, Región de Valparaíso, Chile.</p>
+        <p>&copy; 2026 Sonido Vivo.</p>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="assets/js/confirmar-pedido.js"></script>
+</body>
+</html>

@@ -7,6 +7,8 @@ const listaCarrito =
 const resumenCarrito =
     document.querySelector("#cart-summary");
 
+const botonConfirmarPedido = document.querySelector("#btn-confirmar");
+
 const nombresProductos = {
     1: "Guitarra Eléctrica Epiphone SG Standard",
     2: "Batería Acústica Pearl Roadshow",
@@ -35,6 +37,9 @@ if (
     mensajeCarritoVacio.hidden = true;
     listaCarrito.hidden = false;
     resumenCarrito.hidden = false;
+    if (botonConfirmarPedido) {
+    botonConfirmarPedido.hidden = false;
+}
 
     carrito.forEach(function (producto) {
         const elementoProducto =
