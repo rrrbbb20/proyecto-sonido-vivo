@@ -28,18 +28,16 @@ carrito.forEach(function (producto) {
     cantidadProductos += producto.cantidad;
 });
 
-if (
-    cantidadProductos > 0 &&
+if (cantidadProductos > 0 &&
     mensajeCarritoVacio &&
     listaCarrito &&
-    resumenCarrito
-) {
+    resumenCarrito) {
     mensajeCarritoVacio.hidden = true;
     listaCarrito.hidden = false;
     resumenCarrito.hidden = false;
     if (botonConfirmarPedido) {
     botonConfirmarPedido.hidden = false;
-}
+    }
 
     carrito.forEach(function (producto) {
         const elementoProducto =
