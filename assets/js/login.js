@@ -26,6 +26,27 @@ function limpiarError(campo, contenedorError) {
     campo.removeAttribute("aria-invalid");
 }
 
+function obtenerUsuariosRegistrados() {
+    const usuariosGuardados =
+        localStorage.getItem("usuariosSonidoVivo");
+
+    if (!usuariosGuardados) {
+        return [];
+    }
+
+    try {
+        const usuarios = JSON.parse(usuariosGuardados);
+
+        if (Array.isArray(usuarios)) {
+            return usuarios;
+        }
+
+        return [];
+    } catch (error) {
+        return [];
+    }
+}
+
 if (
     formularioLogin &&
     campoCorreo &&
@@ -39,8 +60,11 @@ if (
 
         let formularioValido = true;
 
-        const correo = campoCorreo.value.trim();
-        const contrasena = campoContrasena.value;
+        const correo =
+            campoCorreo.value.trim().toLowerCase();
+
+        const contrasena =
+            campoContrasena.value;
 
         if (correo === "") {
             mostrarError(
@@ -86,7 +110,6 @@ if (
         }
 
         if (!formularioValido) {
-
             mensajeLogin.hidden = true;
             mensajeLogin.textContent = "";
 
@@ -102,9 +125,47 @@ if (
             return;
         }
 
+        const usuarios =
+            obtenerUsuariosRegistrados();
+
+        const usuarioEncontrado = usuarios.find(
+            function (usuario) {
+                return (
+                    usuario.correo === correo &&
+                    usuario.contrasena === contrasena
+                );
+            }
+        );
+
+        if (!usuarioEncontrado) {
+            mostrarError(
+                campoCorreo,
+                errorCorreo,
+                "Correo o contraseña incorrectos."
+            );
+
+            campoContrasena.setAttribute(
+                "aria-invalid",
+                "true"
+            );
+
+            mensajeLogin.hidden = true;
+            mensajeLogin.textContent = "";
+
+            campoCorreo.focus();
+
+            return;
+        }
+
+        limpiarError(campoCorreo, errorCorreo);
+        limpiarError(
+            campoContrasena,
+            errorContrasena
+        );
+
         mensajeLogin.textContent =
-            "Formulario enviado correctamente. ¡Bienvenido!";
+            `Bienvenido, ${usuarioEncontrado.nombre}.`;
+
         mensajeLogin.hidden = false;
     });
 }
-
