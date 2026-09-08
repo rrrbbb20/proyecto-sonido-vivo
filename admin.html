@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <meta
+        name="description"
+        content="Panel de administración de Sonido Vivo."
+    >
+    <title>Administración | Sonido Vivo</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="site-header_logo" href="index.html">
+            Sonido Vivo
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Abrir menú de navegación"
+            aria-controls="main-navigation"
+            aria-expanded="false"
+        >
+            <span aria-hidden="true">☰</span>
+        </button>
+
+        <nav
+            id="main-navigation"
+            class="site-header_nav"
+            aria-label="Navegación principal"
+        >
+            <ul class="site-header_menu">
+                
+                <li>
+                    <a href="admin.html" aria-current="page">
+                        Administración
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin" id="pagina-administracion">
+        <header class="encabezado-pagina">
+            <h1>Administración</h1>
+
+            <p>
+                Gestiona los trabajadores de Sonido Vivo.
+            </p>
+        </header>
+
+        <section aria-labelledby="workers-title">
+            <h2 id="workers-title">
+                Registrar trabajador
+            </h2>
+
+            <form id="worker-form" novalidate>
+                <div class="form-group">
+                    <label for="worker-name">
+                        Nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="worker-name"
+                        name="nombre"
+                        minlength="3"
+                        maxlength="50"
+                        autocomplete="given-name"
+                        required
+                        aria-describedby="worker-name-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-name-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-lastname">
+                        Apellido
+                    </label>
+
+                    <input
+                        type="text"
+                        id="worker-lastname"
+                        name="apellido"
+                        minlength="3"
+                        maxlength="50"
+                        autocomplete="family-name"
+                        required
+                        aria-describedby="worker-lastname-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-lastname-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-email">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="worker-email"
+                        name="correo"
+                        autocomplete="email"
+                        required
+                        aria-describedby="worker-email-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-email-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-phone">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="worker-phone"
+                        name="telefono"
+                        pattern="[0-9]{9}"
+                        placeholder="Ej: 912345678"
+                        autocomplete="tel"
+                        required
+                        aria-describedby="worker-phone-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-phone-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-address">
+                        Dirección
+                    </label>
+
+                    <input
+                        type="text"
+                        id="worker-address"
+                        name="direccion"
+                        minlength="5"
+                        maxlength="100"
+                        autocomplete="street-address"
+                        placeholder="Ej: Calle Romero 123"
+                        required
+                        aria-describedby="worker-address-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-address-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-role">
+                        Rol
+                    </label>
+
+                    <select
+                        id="worker-role"
+                        name="rol"
+                        required
+                        aria-describedby="worker-role-error"
+                    >
+                        <option value="">Selecciona un rol</option>
+                        <option value="vendedor">Vendedor</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+
+                    <small
+                        class="error-message"
+                        id="worker-role-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="worker-password"
+                        name="contrasena"
+                        minlength="8"
+                        maxlength="12"
+                        autocomplete="new-password"
+                        required
+                        aria-describedby="worker-password-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-password-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <button type="submit">
+                    Registrar trabajador
+                </button>
+            </form>
+
+            <p
+                class="form-success"
+                id="worker-success"
+                aria-live="polite"
+                hidden
+            ></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer_info">
+            <p class="site-footer_name">Sonido Vivo</p>
+
+            <p>
+                Tienda de instrumentos musicales y equipos de audio.
+            </p>
+
+            <p>
+                Viña del Mar, Región de Valparaíso, Chile.
+            </p>
+        </div>
+
+        <p class="site-footer_copyright">
+            &copy; 2026 Sonido Vivo.
+        </p>
+    </footer>
+
+    <script src="assets/js/navegacion.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
