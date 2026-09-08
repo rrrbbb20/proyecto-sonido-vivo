@@ -36,30 +36,11 @@
             aria-label="Navegación principal"
         >
             <ul class="site-header_menu">
-                <li>
-                    <a href="index.html">Inicio</a>
-                </li>
-
-                <li>
-                    <a href="catalogo.html">Catálogo</a>
-                </li>
-
-                <li>
-                    <a href="pedido.html">Pedidos</a>
-                </li>
-
+                
                 <li>
                     <a href="admin.html" aria-current="page">
                         Administración
                     </a>
-                </li>
-
-                <li>
-                    <a href="login.html">Iniciar sesión</a>
-                </li>
-
-                <li>
-                    <a href="carrito.html">Carrito (0)</a>
                 </li>
             </ul>
         </nav>
@@ -79,7 +60,178 @@
                 Registrar trabajador
             </h2>
 
-            <!-- Aquí agregaremos el formulario -->
+            <form id="worker-form" novalidate>
+                <div class="form-group">
+                    <label for="worker-name">
+                        Nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        id="worker-name"
+                        name="nombre"
+                        minlength="3"
+                        maxlength="50"
+                        autocomplete="given-name"
+                        required
+                        aria-describedby="worker-name-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-name-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-lastname">
+                        Apellido
+                    </label>
+
+                    <input
+                        type="text"
+                        id="worker-lastname"
+                        name="apellido"
+                        minlength="3"
+                        maxlength="50"
+                        autocomplete="family-name"
+                        required
+                        aria-describedby="worker-lastname-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-lastname-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-email">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="worker-email"
+                        name="correo"
+                        autocomplete="email"
+                        required
+                        aria-describedby="worker-email-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-email-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-phone">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="worker-phone"
+                        name="telefono"
+                        pattern="[0-9]{9}"
+                        placeholder="Ej: 912345678"
+                        autocomplete="tel"
+                        required
+                        aria-describedby="worker-phone-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-phone-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-address">
+                        Dirección
+                    </label>
+
+                    <input
+                        type="text"
+                        id="worker-address"
+                        name="direccion"
+                        minlength="5"
+                        maxlength="100"
+                        autocomplete="street-address"
+                        placeholder="Ej: Calle Romero 123"
+                        required
+                        aria-describedby="worker-address-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-address-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-role">
+                        Rol
+                    </label>
+
+                    <select
+                        id="worker-role"
+                        name="rol"
+                        required
+                        aria-describedby="worker-role-error"
+                    >
+                        <option value="">Selecciona un rol</option>
+                        <option value="vendedor">Vendedor</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+
+                    <small
+                        class="error-message"
+                        id="worker-role-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="worker-password">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="worker-password"
+                        name="contrasena"
+                        minlength="8"
+                        maxlength="12"
+                        autocomplete="new-password"
+                        required
+                        aria-describedby="worker-password-error"
+                    >
+
+                    <small
+                        class="error-message"
+                        id="worker-password-error"
+                        aria-live="polite"
+                    ></small>
+                </div>
+
+                <button type="submit">
+                    Registrar trabajador
+                </button>
+            </form>
+
+            <p
+                class="form-success"
+                id="worker-success"
+                aria-live="polite"
+                hidden
+            ></p>
         </section>
     </main>
 
@@ -103,5 +255,6 @@
 
     <script src="assets/js/navegacion.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/admin.js"></script>
 </body>
 </html>
