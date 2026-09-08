@@ -10,64 +10,17 @@ const contenedorPedidos = document.querySelector("#contenedor-pedidos");
 
 if (contenedorPedidos) {
 
-    const pedidosIniciales = [
-        {
-            codigo: "SV-2026",
-            fecha: "06/09/2026",
-            estado: "En preparación",
-            direccion: "1 Norte 123, Depto 402, Viña del Mar, Región Valparaíso (CP: 2520000)",
-            telefono: "912345678",
-            metodoEntrega: "Despacho a domicilio",
-            articulos: [
-                {
-                    nombre: "Guitarra Eléctrica Epiphone SG Standard",
-                    precio: 319990,
-                    cantidad: 1,
-                    imagen: "assets/img/guitarra-electrica-epiphone-sg.jpg"
-                },
-                {
-                    nombre: "Batería Acústica Pearl Roadshow",
-                    precio: 599990,
-                    cantidad: 1,
-                    imagen: "assets/img/bateria-pearl-roadshow.webp"
-                },
-                {
-                    nombre: "Micrófono Condensador Audio-Tech AT2020",
-                    precio: 199990,
-                    cantidad: 1,
-                    imagen: "assets/img/microfono-atech-at2020.jpg"
-                }
-            ]
-        },
-        {
-            codigo: "SV-1845",
-            fecha: "28/08/2026",
-            estado: "Entregado",
-            direccion: "Álvares 456, Viña del Mar",
-            telefono: "987654321",
-            metodoEntrega: "Retiro en tienda",
-            articulos: [
-                {
-                    nombre: "Micrófono Condensador Audio-Tech AT2020",
-                    precio: 199990,
-                    cantidad: 2,
-                    imagen: "assets/img/microfono-atech-at2020.jpg"
-                }
-            ]
-        }
-    ];
-
+    
     // 2. Obtener datos de localStorage
     let listaPedidos = null;
     try {
         listaPedidos = JSON.parse(localStorage.getItem("pedidosSonidoVivo"));
     } catch (e) {
-        listaPedidos = null;
+        listaPedidos = [];
     }
 
-    if (!Array.isArray(listaPedidos) || listaPedidos.length === 0) {
-        listaPedidos = pedidosIniciales;
-        localStorage.setItem("pedidosSonidoVivo", JSON.stringify(listaPedidos));
+    if (!Array.isArray(listaPedidos)) {
+        listaPedidos = [];
     }
 
     // 3. Generar la barra de progreso (Stepper)
@@ -132,7 +85,7 @@ if (contenedorPedidos) {
                 itemsHTML += `
                     <li class="articulo-item">
                         <img 
-                            src="${item.imagen || 'assets/img/guitarra-electrica-epiphone-sg.jpg'}" 
+                            src="${item.imagen}" 
                             alt="${item.nombre}" 
                             class="articulo-img"
                         >
@@ -144,7 +97,7 @@ if (contenedorPedidos) {
                     </li>
                 `;
             });
-
+            
             contenidoHTML += `
                 <article class="tarjeta-pedido" aria-labelledby="codigo-${pedido.codigo}">
                     <header class="tarjeta-pedido_header">
