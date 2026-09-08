@@ -238,9 +238,10 @@ if (formularioRegistro) {
             "usuariosSonidoVivo",
             JSON.stringify(usuariosGuardados)
         );
+        establecerUsuarioActual(nuevoUsuario);
         alert("Registro completado con éxito. Ahora puedes iniciar sesión.");
         formularioRegistro.reset();
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     });
     // 15. VALIDACIÓN EN TIEMPO REAL (BLUR E INPUT)
     const camposConValidacion = [
