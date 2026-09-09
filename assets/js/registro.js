@@ -239,7 +239,7 @@ if (formularioRegistro) {
             JSON.stringify(usuariosGuardados)
         );
         establecerUsuarioActual(nuevoUsuario);
-        alert("Registro completado con éxito. Ahora puedes iniciar sesión.");
+        alert("Registro completado con éxito. ");
         formularioRegistro.reset();
         window.location.href = "index.html";
     });
