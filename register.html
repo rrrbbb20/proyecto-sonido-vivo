@@ -14,8 +14,11 @@
     >
         Sonido Vivo
     </a>
-
+    <button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-controls="main-navigation" aria-expanded="false"> 
+        <span aria-hidden="true">☰</span>
+    </button>
     <nav
+        id="main-navigation"
         class="site-header_nav"
         aria-label="Navegación principal"
     >
@@ -59,7 +62,7 @@
 
         </header>
         <section class="form-section">
-            <form id="register-form" action="my-account.html" method="post" novalidate>
+            <form id="register-form" method="post" novalidate>
                 <fieldset>
                     <legend>Datos personales</legend>
 
