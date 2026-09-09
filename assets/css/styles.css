@@ -156,7 +156,7 @@ legend { font-size: 1.15rem; font-weight: bold; color: var(--color-primary); mar
 .total-pedido { display: flex; flex-direction: column; }
 .etiqueta-total { margin: 0; font-size: 0.85rem; color: var(--color-muted); }
 .monto-total { margin: 0; font-size: 1.4rem; font-weight: bold; color: var(--color-accent); }
-/* PARTE 7: UBICACIÓN, CONTACTO Y CONFIRMACIÓN DE COMPRA/
+/*PARTE 7: UBICACIÓN, CONTACTO Y CONFIRMACIÓN DE COMPRA/
 /* Ubicación y contenedor de mapa responsivo (ubicacion.html) */
 .info-ubicacion { padding: 1.25rem; border-left: 5px solid var(--color-accent); background: var(--color-surface); border-radius: 0 8px 8px 0; margin-bottom: 2rem; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
 .mapa-contenedor { width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border); }
@@ -166,8 +166,7 @@ legend { font-size: 1.15rem; font-weight: bold; color: var(--color-primary); mar
 #resumen-pedido h2 { color: var(--color-primary); border-bottom: 1px solid var(--color-border); padding-bottom: 0.75rem; }
 #lista-productos p { padding: 0.75rem 0; margin: 0; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; }
 #total-pedido { color: var(--color-accent); font-size: 1.35rem; margin-top: 1.25rem; text-align: right; }
-/* PARTE 8: ADAPTABILIDAD RESPONSIVA (MEDIA QUERIES) */
-
+/*PARTE 8: ADAPTABILIDAD RESPONSIVA (MEDIA QUERIES)/
 /* TABLETA (Ancho mínimo: 768px)*/
 @media (min-width: 768px) {
     /*  Despliegue horizontal de la navegación */
