@@ -78,3 +78,73 @@ legend { font-size: 1.15rem; font-weight: bold; color: var(--color-primary); mar
 .form-group-checkbox { margin-bottom: 1.5rem; }
 .form-group-checkbox label { font-weight: normal; display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
 .form-group-checkbox input[type="checkbox"] { width: 1.1rem; height: 1.1rem; }
+/*PARTE 5: PORTADA, CATÁLOGO, CARRITO, LOGIN, ADMIN Y FOOTER*/
+/* Portada: Hero, categorías y video responsivo */
+.hero, .store-info, .cart_content, .login, .admin section { padding: 2rem; border-radius: 8px; background: var(--color-surface); border: 1px solid var(--color-border); }
+.hero_content h1 { font-size: 1.85rem; color: var(--color-primary); }
+.hero_actions { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.25rem; }
+.categories_list { display: grid; grid-template-columns: 1fr; gap: 1rem; padding: 0; list-style: none; }
+.category { display: block; padding: 1.25rem; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-surface); font-weight: bold; text-align: center; text-decoration: none; transition: 0.2s ease; }
+.category:hover { border-color: var(--color-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.featured-video_container { width: 100%; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; }
+.featured-video iframe { width: 100%; height: 100%; border: 0; }
+/* Catálogo y Buscador (catalogo.html) */
+.catalog_search { display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-surface); margin-bottom: 2rem; }
+.product-list_grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: 0; list-style: none; }
+/* Carrito de Compras (carrito.html) */
+.cart_list { padding: 0; list-style: none; margin: 1.5rem 0; }
+.cart_list li { padding: 1rem 0; border-bottom: 1px solid var(--color-border); display: flex; justify-content: space-between; }
+.cart_summary { font-size: 1.15rem; font-weight: bold; margin: 1.25rem 0; color: var(--color-primary); }
+/* Vistas de Autenticación y Gestión (login.html y admin.html) */
+.login, .admin section { max-width: 600px; margin: 0 auto; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+/* Pie de Página Institucional */
+.site-footer { padding: 2.5rem 5%; background: var(--color-primary); color: #fff; margin-top: 3rem; }
+.site-footer_menu { display: flex; flex-direction: column; gap: 0.6rem; padding: 0; list-style: none; }
+.site-footer_menu a { text-decoration: none; color: #d1d5db; }
+.site-footer_menu a:hover { color: #fff; }
+.site-footer_copyright { margin-top: 1.5rem; color: #9ca3af; font-size: 0.85rem; }
+/*PARTE 6: DESTACADOS, DETALLE, REGISTRO Y SEGUIMIENTO DE PEDIDOS*/
+/* Productos Destacados (index.html) */
+.recommended-products_list { display: grid; grid-template-columns: 1fr; gap: 1.5rem; padding: 0; list-style: none; }
+/* Tarjetas de Producto (Base compartida para destacados y catálogo) */
+.product-card, .recommended-products article { padding: 1.25rem; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-surface); display: flex; flex-direction: column; justify-content: space-between; transition: 0.2s ease; }
+.product-card:hover, .recommended-products article:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.product-card img, .recommended-products img { width: 100%; height: 210px; object-fit: contain; margin-bottom: 1rem; }
+.product-card_price, .recommended-products span { color: var(--color-accent); font-size: 1.25rem; font-weight: bold; display: block; margin: 0.5rem 0; }
+/* Detalle de Producto (producto.html) */
+#pagina-producto article { max-width: 750px; margin: 0 auto; padding: 2rem; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-surface); }
+#pagina-producto #imagen { width: 100%; max-height: 380px; object-fit: contain; margin-bottom: 1.5rem; }
+#pagina-producto #precio { color: var(--color-accent); font-size: 1.6rem; font-weight: bold; display: block; margin: 0.75rem 0; }
+/* Vista de Registro (register.html) */
+#pagina-registro { max-width: 650px; margin: 0 auto; }
+.form-section { padding: 2rem; border: 1px solid var(--color-border); border-radius: 8px; background: var(--color-surface); }
+/* Módulo de Seguimiento de Pedidos (pedido.html) */
+.tarjeta-pedido { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+.tarjeta-pedido_header { display: flex; flex-direction: column; gap: 0.75rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+.tarjeta-pedido_header h2 { margin: 0 0 0.25rem 0; font-size: 1.3rem; color: var(--color-primary); }
+.fecha-pedido { margin: 0; color: var(--color-muted); font-size: 0.875rem; }
+/* Badges dinámicos de estado inyectados por JavaScript */
+.badge { display: inline-block; width: fit-content; padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.85rem; font-weight: bold; white-space: nowrap; }
+.badge-confirmado { background: var(--color-info-bg); color: var(--color-info); }
+.badge-en-preparacion, .badge-en-preparación { background: var(--color-warning-bg); color: var(--color-warning); }
+.badge-despachado { background: var(--color-purple-bg); color: var(--color-purple); }
+.badge-entregado { background: var(--color-success-bg); color: var(--color-success); }
+/* Stepper vertical para móviles */
+.stepper-contenedor { margin: 2rem 0; padding: 0 0.5rem; }
+.stepper { display: flex; flex-direction: column; gap: 1rem; list-style: none; padding: 0; margin: 0; position: relative; }
+.stepper-paso { display: flex; align-items: center; gap: 0.75rem; position: relative; z-index: 2; }
+.paso-icono { width: 32px; height: 32px; border-radius: 50%; background: var(--color-surface); border: 2px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: bold; color: var(--color-muted); flex-shrink: 0; }
+.paso-titulo { font-size: 0.9rem; color: var(--color-muted); }
+.stepper-paso.completado .paso-icono { background: var(--color-success); border-color: var(--color-success); color: #fff; }
+.stepper-paso.completado .paso-titulo { color: var(--color-success); font-weight: 600; }
+.stepper-paso.activo .paso-icono { background: var(--color-accent); border-color: var(--color-accent); color: #fff; box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.2); }
+.stepper-paso.activo .paso-titulo { color: var(--color-text); font-weight: bold; }
+/* Lista de artículos comprados */
+.pedido-articulos { margin-top: 1.5rem; }
+.pedido-articulos h3 { font-size: 1rem; margin-bottom: 0.75rem; color: var(--color-primary); }
+.lista-articulos { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--color-border); }
+.articulo-item { display: grid; grid-template-columns: 65px 1fr; align-items: center; gap: 1.25rem; padding: 0.85rem 0; border-bottom: 1px solid var(--color-border); }
+.articulo-img { width: 65px; height: 65px; object-fit: cover; border-radius: 6px; border: 1px solid var(--color-border); background: #fff; }
+.articulo-detalles h4 { margin: 0 0 0.2rem 0; font-size: 0.95rem; }
+.articulo-detalles p { margin: 0; font-size: 0.85rem; color: var(--color-muted); }
+.articulo-detalles .articulo-precio { font-weight: bold; color: var(--color-primary); margin-top: 0.25rem; }
